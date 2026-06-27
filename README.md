@@ -43,7 +43,7 @@ No build tools, no Node, no config files needed — it's static HTML and goes li
 
 ## 🖥️ Run it locally (optional, before pushing)
 
-You don't need anything installed to *view* the site — just double-click `index.html` and it opens in your browser.
+You don't need anything installed to _view_ the site — just double-click `index.html` and it opens in your browser.
 
 To run it through a local server (recommended, so relative links behave exactly like production):
 
@@ -55,13 +55,13 @@ python3 -m http.server 8000
 
 ## ✏️ Before going live — replace these placeholders
 
-| What | Where | Replace with |
-|---|---|---|
-| Phone number `+91 98843 29006` | All pages (header, footer, WhatsApp links, sticky CTA) | Actual clinic contact number |
-| Kotturpuram address | `contact.html` | Confirm/replace with real second-clinic address |
-| Google Map embed | `contact.html` (`<iframe>` in `.map-embed`) | Get the real embed link from Google Maps → Share → Embed a map |
-| Domain in `<link rel="canonical">` and `og:url` tags | All pages | Your actual domain once you have one |
-| Clinic photos | `gallery.html` | Currently uses illustrated SVG placeholders — swap in real photos (see below) |
+| What                                                 | Where                                                  | Replace with                                                                  |
+| ---------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| Phone number `+91 81244 56789`                       | All pages (header, footer, WhatsApp links, sticky CTA) | Actual clinic contact number                                                  |
+| Kotturpuram address                                  | `contact.html`                                         | Confirm/replace with real second-clinic address                               |
+| Google Map embed                                     | `contact.html` (`<iframe>` in `.map-embed`)            | Get the real embed link from Google Maps → Share → Embed a map                |
+| Domain in `<link rel="canonical">` and `og:url` tags | All pages                                              | Your actual domain once you have one                                          |
+| Clinic photos                                        | `gallery.html`                                         | Currently uses illustrated SVG placeholders — swap in real photos (see below) |
 
 ## 🖼️ Adding real photos
 
@@ -70,7 +70,10 @@ The gallery currently uses line-art SVG placeholders so the site works with zero
 1. Put image files in the empty `images/` folder (create it if needed) — e.g. `images/reception.jpg`
 2. In `gallery.html`, replace a `<div class="g-tile">...</div>` block with:
    ```html
-   <div class="g-tile" style="background-image:url('images/reception.jpg'); background-size:cover; background-position:center;">
+   <div
+     class="g-tile"
+     style="background-image:url('images/reception.jpg'); background-size:cover; background-position:center;"
+   >
      <div class="g-label">Reception &amp; waiting area</div>
    </div>
    ```
@@ -93,12 +96,12 @@ The gallery currently uses line-art SVG placeholders so the site works with zero
 
 ## 🎨 Design system reference
 
-| Token | Hex | Use |
-|---|---|---|
-| Navy | `#0F2A3D` | Headers, primary text, dark sections |
-| Bone | `#F7F4EE` | Page background |
-| Clay | `#C77B3D` | Primary buttons, accents, links |
-| Recovery green | `#2E6B4F` | Success/positive indicators, icons |
+| Token          | Hex       | Use                                  |
+| -------------- | --------- | ------------------------------------ |
+| Navy           | `#0F2A3D` | Headers, primary text, dark sections |
+| Bone           | `#F7F4EE` | Page background                      |
+| Clay           | `#C77B3D` | Primary buttons, accents, links      |
+| Recovery green | `#2E6B4F` | Success/positive indicators, icons   |
 
 Fonts: **Fraunces** (headings), **Inter** (body), **IBM Plex Mono** (stats, labels, eyebrow text) — all loaded from Google Fonts CDN, no local font files required.
 
