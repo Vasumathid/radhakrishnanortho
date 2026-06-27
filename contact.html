@@ -254,15 +254,7 @@
                 Fill this in and the clinic team will call you back to confirm a
                 slot — usually within a few hours during clinic time.
               </p>
-              <form
-                onsubmit="
-                  event.preventDefault();
-                  alert(
-                    'Thank you! The clinic team will call you shortly to confirm your appointment.',
-                  );
-                  this.reset();
-                "
-              >
+              <form id="appointmentForm">
                 <div class="form-row">
                   <label for="name">Full Name</label>
                   <input

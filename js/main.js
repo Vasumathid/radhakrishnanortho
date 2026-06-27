@@ -83,5 +83,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const href = a.getAttribute('href');
     if (href === path) a.classList.add('active');
   });
+document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const location = document.getElementById("location").value;
+  const reason = document.getElementById("reason").value;
+  const message = document.getElementById("message").value;
+
+  const whatsappMessage =
+`*New Appointment Request*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+🏥 Preferred Clinic: ${location}
+🩺 Reason: ${reason}
+📝 Additional Details: ${message || "None"}`;
+
+  const whatsappUrl =
+    `https://wa.me/918124456789?text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappUrl, "_blank");
+
+  this.reset();
+});
 });
